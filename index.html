@@ -8,6 +8,19 @@
 <body>
 
     <h1> 나의 포트롤리요 </h1>
+    <h2 id="position"> 현재 위치 </h2>
+    <script>
+
+        //gps 정보 받아오기
+        navigator.geolocation.getCurrentPosition(function(position){
+            console.log(position);
+            console.log(position.coords.latitude);
+            console.log(position.coords.longitude);
+
+            documentquerySelector("#position").innerHTML = "현재 위치 : " + position.coords.latitude + ", " + position.coords.longitude;    
+        });
+
+    </script>
     
 </body>
 </html>
